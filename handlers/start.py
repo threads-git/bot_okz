@@ -2,9 +2,9 @@ from aiogram import Router, Bot
 from aiogram.filters import CommandStart
 from aiogram.types import Message
 
-from Bot_ctrl_pvtr_OKZ_bot.keyboards.all_kb import main_kb, register_kb
+from keyboards.all_kb import main_kb, register_kb
 
-from Bot_ctrl_pvtr_OKZ_bot.utils.database import Database
+from utils.database import Database
 from aiogram.utils.chat_action import ChatActionSender
 import os
 
