@@ -6,9 +6,9 @@ from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import Message, CallbackQuery
 from aiogram.utils.chat_action import ChatActionSender
-from Bot_ctrl_pvtr_OKZ_bot.keyboards.all_kb import get_login_tg, check_data, check_access_kb
-from Bot_ctrl_pvtr_OKZ_bot.utils.utils import  extract_phone
-from Bot_ctrl_pvtr_OKZ_bot.utils.database import Database
+from keyboards.all_kb import get_login_tg, check_data, check_access_kb
+from utils.utils import  extract_phone
+from utils.database import Database
 import os
 register_router = Router()
 db = Database(os.getenv('DATABASE_NAME'))
