@@ -1,11 +1,11 @@
 import asyncio
-from Bot_ctrl_pvtr_OKZ_bot.create_bot import bot, dp, admins
-from Bot_ctrl_pvtr_OKZ_bot.handlers.admin_panel import admin_router
-from Bot_ctrl_pvtr_OKZ_bot.handlers.user_router import user_router
-from Bot_ctrl_pvtr_OKZ_bot.handlers.register_new import register_router
-from Bot_ctrl_pvtr_OKZ_bot.handlers.start import start_router
+from create_bot import bot, dp, admins
+from handlers.admin_panel import admin_router
+from handlers.user_router import user_router
+from handlers.register_new import register_router
+from handlers.start import start_router
 from aiogram.types import BotCommand, BotCommandScopeDefault
-from Bot_ctrl_pvtr_OKZ_bot.utils.database import Database
+from utils.database import Database
 import os
 db = Database(os.getenv('DATABASE_NAME'))
 
