@@ -1,5 +1,5 @@
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup, InlineKeyboardButton, InlineKeyboardMarkup
-from Bot_TG_new.create_bot import admins
+from create_bot import admins
 
 def main_kb(user_telegram_id: int):
     kb_list = [
