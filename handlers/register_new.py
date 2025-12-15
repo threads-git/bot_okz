@@ -1,6 +1,6 @@
 import asyncio
 import datetime
-from Bot_ctrl_pvtr_OKZ_bot.create_bot import bot
+from create_bot import bot
 from aiogram import Router, F
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
@@ -115,4 +115,5 @@ async def start_questionnaire_process(call: CallbackQuery, state: FSMContext):
 async def start_questionnaire_process(call: CallbackQuery, state: FSMContext):
     await call.answer('До свидания!')
     await call.message.edit_reply_markup(reply_markup=None)
+
     await state.clear()
