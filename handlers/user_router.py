@@ -38,7 +38,7 @@ async def start_profile(message: Message, state: FSMContext, bot: Bot):
     profile_message = (
         f"<b>👤 Ваша статистика по опозданиям:</b>\n"
         f"<b>📛 в этом месяце:</b> {user_delay[0]}\n"
-        f"<b>📅 Дата последнего опоздания:</b> \n{get_data_max[0]}\n"
+        f"<b>📅 Дата последнего опоздания или отсутствия:</b> \n{get_data_max[0]}\n"
     )
     await message.answer(profile_message, caption=profile_message, reply_markup=back_kb())
     await state.set_state(Form.back)
@@ -250,6 +250,7 @@ async def no_absent(call: CallbackQuery, state: FSMContext):
     await call.message.answer("Вы не согласовали, Ответ отправлен!")
     await state.clear()
     del active_requests[request_id]
+
 
 
 
