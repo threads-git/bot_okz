@@ -218,7 +218,7 @@ async def absent(message: Message, state: FSMContext):
     }
 
     await bot.send_message(chat_id=message.from_user.id, text='Направлено на согласование🙃')
-    await bot.send_message(849274173, text=f'{fio[0]} запрашивает согласование отсутствия:\n'
+    await bot.send_message(375559252, text=f'{fio[0]} запрашивает согласование отсутствия:\n'
                                           f'<b>{data.get("reason")}</b>', reply_markup=agreement_kb(request_id))
     await state.clear()
 
@@ -250,6 +250,7 @@ async def no_absent(call: CallbackQuery, state: FSMContext):
     await call.message.answer("Вы не согласовали, Ответ отправлен!")
     await state.clear()
     del active_requests[request_id]
+
 
 
 
