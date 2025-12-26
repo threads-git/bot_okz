@@ -58,6 +58,7 @@ async def delay(call: CallbackQuery, state: FSMContext):
     db = Database(os.getenv('DATABASE_NAME'))
     db.add_delay(data.get("user_id"), 'by15', datetime.date.today())
     await call.message.answer('Ну ты больше не опаздывай😐', reply_markup=main_kb(data.get("user_id")))
+    await bot.send_message(375559252, text=f'{data.get("user_id")} опаздывает на 15 минут')
     await call.message.edit_reply_markup(reply_markup=None)
     await state.clear()
 
@@ -67,6 +68,7 @@ async def delay(call: CallbackQuery, state: FSMContext):
     db = Database(os.getenv('DATABASE_NAME'))
     db.add_delay(data.get("user_id"), 'by30', datetime.date.today())
     await call.message.answer('Ну ты больше не опаздывай😐', reply_markup=main_kb(data.get("user_id")))
+        await bot.send_message(375559252, text=f'{data.get("user_id")} опаздывает на 30 минут')
     await call.message.edit_reply_markup(reply_markup=None)
     await state.clear()
 
@@ -76,6 +78,7 @@ async def delay(call: CallbackQuery, state: FSMContext):
     db = Database(os.getenv('DATABASE_NAME'))
     db.add_delay(data.get("user_id"), 'by60', datetime.date.today())
     await call.message.answer('Ну ты больше не опаздывай😐', reply_markup=main_kb(data.get("user_id")))
+    await bot.send_message(375559252, text=f'{data.get("user_id")} опаздывает на час')
     await call.message.edit_reply_markup(reply_markup=None)
     await state.clear()
 
@@ -85,6 +88,7 @@ async def delay(call: CallbackQuery, state: FSMContext):
     await call.message.answer('Сейчас спрошу у начальника...😉 Ожидай...😜')
     await asyncio.sleep(4)
     await call.message.answer('Шутка, давай езжай на работу...🤣🤣🤣')
+    await bot.send_message(375559252, text=f'{data.get("user_id")} уже хочет домой поехать🤣')
     await state.clear()
 
 @user_router.callback_query(F.data == 'back', Form.delay_time)
@@ -250,6 +254,7 @@ async def no_absent(call: CallbackQuery, state: FSMContext):
     await call.message.answer("Вы не согласовали, Ответ отправлен!")
     await state.clear()
     del active_requests[request_id]
+
 
 
 
